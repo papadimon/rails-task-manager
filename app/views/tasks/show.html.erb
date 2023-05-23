@@ -1,0 +1,27 @@
+<br>
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h1><%= @task.title %></h1>
+    <%= link_to "<= Edit task", edit_task_path %>
+  </div>
+  <br>
+  <%= @task.details %>
+  <br>
+  <br>
+  <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+            <% if @task.completed == true %>
+              checked
+            <% end %>
+            >
+      <label class="form-check-label" for="flexCheckChecked">
+        <% if @task.completed == true %>
+          Completed
+        <% elsif @task.completed == false %>
+          Not Completed
+        <% end %>
+      </label>
+    </div>
+  <br>
+  <%= link_to "<= Back to Tasks", tasks_path %>
+</div>
